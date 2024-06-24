@@ -1,11 +1,16 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_home/bottomNav.dart';
 import 'package:smart_home/utils/theme/colors.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:smart_home/utils/constants/images.dart';
 import 'package:smart_home/features/home/view/Home.dart';
+import 'package:smart_home/common/widgets/info_tile.dart';
 import 'package:smart_home/features/home/view/stats.dart';
+import 'package:smart_home/common/widgets/device_tile.dart';
 import 'package:smart_home/features/home/view/settings.dart';
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
+import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,7 +41,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int currentIndex = 1;
-  final List<Widget> pages = [const Settings(), const Home(), const Stats()];
+  final List<Widget> pages = [
+    const Settings(),
+    const Home(),
+    const Stats(),
+    const Home(),
+    const Stats()
+  ];
 
   void onTapped(int index) {
     setState(() {
@@ -47,45 +58,61 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 5,
       child: Scaffold(
-        body: NestedScrollView(
-          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-            return <Widget>[
-              const SliverAppBar(
-                backgroundColor: ZColors.primary,
-                pinned: true,
-                floating: true,
-                bottom: TabBar(
-                  dividerColor: Colors.transparent,
-                  indicatorColor: ZColors.secondary,
-                  isScrollable: true,
-                  tabs: [
-                    Tab(
-                        child: Text('Living Room',
-                            style: TextStyle(color: ZColors.white))),
-                    Tab(
-                        child: Text('Kitchen',
-                            style: TextStyle(color: ZColors.white))),
-                    Tab(
-                        child: Text('Bathroom',
-                            style: TextStyle(color: ZColors.white))),
-                    Tab(
-                        child: Text('Kid Room',
-                            style: TextStyle(color: ZColors.white))),
+        body: TabBarView(
+          children: [
+            Column(
+              children: [
+                const SizedBox(height: 20),
+                const InfoTile(),
+                const SizedBox(height: 30),
+                GridView.count(
+                  crossAxisCount: 2,
+                  children: <Widget>[
+                    const FlutterLogo(),
+                    const FlutterLogo(),
+                    const FlutterLogo(),
+                    const FlutterLogo(),
                   ],
                 ),
-              ),
-            ];
-          },
-          body: const TabBarView(
-            children: <Widget>[
-              Icon(Icons.flight, size: 350),
-              Icon(Icons.directions_transit, size: 350),
-              Icon(Icons.directions_car, size: 350),
-              Icon(Icons.directions_bike, size: 350),
-            ],
-          ),
+                const Row(
+                  children: [
+                    DeviceTile(
+                      brand: "Philips Hue",
+                      icon: FluentIcons.lightbulb_20_regular,
+                      name: "Light",
+                      isActive: true,
+                    ),
+                    DeviceTile(
+                      brand: "LG S3",
+                      icon: FluentIcons.weather_snowflake_20_regular,
+                      name: "AC",
+                      isActive: false,
+                    ),
+                    DeviceTile(
+                      brand: "LG S3",
+                      icon: FluentIcons.weather_snowflake_20_regular,
+                      name: "AC",
+                      isActive: false,
+                    ),
+                  ],
+                )
+              ],
+            ),
+            const Center(
+              child: Text("Calls"),
+            ),
+            const Center(
+              child: Text("Settings"),
+            ),
+            const Center(
+              child: Text("Settings"),
+            ),
+            const Center(
+              child: Text("Settings"),
+            ),
+          ],
         ),
         backgroundColor: ZColors.primary,
         appBar: AppBar(
@@ -132,6 +159,28 @@ class _HomePageState extends State<HomePage> {
               ],
             )
           ],
+          bottom: const TabBar(
+            dividerColor: Colors.transparent,
+            indicatorColor: ZColors.secondary,
+            isScrollable: true,
+            tabs: [
+              Tab(
+                  child: Text('Living Room',
+                      style: TextStyle(color: ZColors.white))),
+              Tab(
+                  child:
+                      Text('Kitchen', style: TextStyle(color: ZColors.white))),
+              Tab(
+                  child:
+                      Text('Bathroom', style: TextStyle(color: ZColors.white))),
+              Tab(
+                  child:
+                      Text('Kid Room', style: TextStyle(color: ZColors.white))),
+              Tab(
+                  child: Text('Guest Room',
+                      style: TextStyle(color: ZColors.white))),
+            ],
+          ),
         ),
         bottomNavigationBar: BottomNavBar(
           currentIndex: currentIndex,
