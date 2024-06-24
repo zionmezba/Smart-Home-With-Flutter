@@ -46,8 +46,47 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: pages[currentIndex],
+    return DefaultTabController(
+      length: 4,
+      child: Scaffold(
+        body: NestedScrollView(
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            return <Widget>[
+              const SliverAppBar(
+                backgroundColor: ZColors.primary,
+                pinned: true,
+                floating: true,
+                bottom: TabBar(
+                  dividerColor: Colors.transparent,
+                  indicatorColor: ZColors.secondary,
+                  isScrollable: true,
+                  tabs: [
+                    Tab(
+                        child: Text('Living Room',
+                            style: TextStyle(color: ZColors.white))),
+                    Tab(
+                        child: Text('Kitchen',
+                            style: TextStyle(color: ZColors.white))),
+                    Tab(
+                        child: Text('Bathroom',
+                            style: TextStyle(color: ZColors.white))),
+                    Tab(
+                        child: Text('Kid Room',
+                            style: TextStyle(color: ZColors.white))),
+                  ],
+                ),
+              ),
+            ];
+          },
+          body: const TabBarView(
+            children: <Widget>[
+              Icon(Icons.flight, size: 350),
+              Icon(Icons.directions_transit, size: 350),
+              Icon(Icons.directions_car, size: 350),
+              Icon(Icons.directions_bike, size: 350),
+            ],
+          ),
+        ),
         backgroundColor: ZColors.primary,
         appBar: AppBar(
           elevation: 0,
@@ -97,6 +136,8 @@ class _HomePageState extends State<HomePage> {
         bottomNavigationBar: BottomNavBar(
           currentIndex: currentIndex,
           onTapped: onTapped,
-        ));
+        ),
+      ),
+    );
   }
 }
