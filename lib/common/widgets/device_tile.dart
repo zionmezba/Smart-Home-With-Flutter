@@ -91,10 +91,11 @@ class DeviceTile extends StatelessWidget {
                       ),
                       const SizedBox(height: 10),
                       Text(
+                        maxLines: 1,
                         brand,
                         style: const TextStyle(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 10,
                             fontWeight: FontWeight.w200),
                       ),
                     ],

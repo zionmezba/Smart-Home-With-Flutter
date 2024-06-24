@@ -65,27 +65,48 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 20),
                 const InfoTile(),
                 const SizedBox(height: 30),
-                const Row(
-                  children: [
-                    DeviceTile(
-                      brand: "Philips Hue",
-                      icon: FluentIcons.lightbulb_20_regular,
-                      name: "Light",
-                      isActive: true,
+                Expanded(
+                  flex: 1,
+                  child: GridView(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 10.0,
+                      mainAxisSpacing: 10.0,
                     ),
-                    DeviceTile(
-                      brand: "LG S3",
-                      icon: FluentIcons.weather_snowflake_20_regular,
-                      name: "AC",
-                      isActive: false,
-                    ),
-                    DeviceTile(
-                      brand: "LG S3",
-                      icon: FluentIcons.weather_snowflake_20_regular,
-                      name: "AC",
-                      isActive: false,
-                    ),
-                  ],
+                    children: const [
+                      DeviceTile(
+                        brand: "Philips Hue",
+                        icon: FluentIcons.lightbulb_20_regular,
+                        name: "Light",
+                        isActive: true,
+                      ),
+                      DeviceTile(
+                        brand: "LG S3",
+                        icon: FluentIcons.weather_snowflake_20_regular,
+                        name: "AC",
+                        isActive: false,
+                      ),
+                      DeviceTile(
+                        brand: "LG S3",
+                        icon: FluentIcons.weather_snowflake_20_regular,
+                        name: "AC",
+                        isActive: false,
+                      ),
+                      DeviceTile(
+                        brand: "LG S3",
+                        icon: FluentIcons.weather_snowflake_20_regular,
+                        name: "AC",
+                        isActive: false,
+                      ),
+                      DeviceTile(
+                        brand: "LG S3",
+                        icon: FluentIcons.weather_snowflake_20_regular,
+                        name: "AC",
+                        isActive: false,
+                      ),
+                    ],
+                  ),
                 )
               ],
             ),
