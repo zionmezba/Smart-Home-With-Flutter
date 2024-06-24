@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/utils/theme/colors.dart';
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 
 class DeviceTile extends StatelessWidget {

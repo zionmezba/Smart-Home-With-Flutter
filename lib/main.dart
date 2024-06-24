@@ -1,4 +1,3 @@
-import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_home/bottomNav.dart';
 import 'package:smart_home/utils/theme/colors.dart';
@@ -10,7 +9,6 @@ import 'package:smart_home/features/home/view/stats.dart';
 import 'package:smart_home/common/widgets/device_tile.dart';
 import 'package:smart_home/features/home/view/settings.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
-import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 
 void main() {
   runApp(const MyApp());
@@ -67,15 +65,6 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 20),
                 const InfoTile(),
                 const SizedBox(height: 30),
-                GridView.count(
-                  crossAxisCount: 2,
-                  children: <Widget>[
-                    const FlutterLogo(),
-                    const FlutterLogo(),
-                    const FlutterLogo(),
-                    const FlutterLogo(),
-                  ],
-                ),
                 const Row(
                   children: [
                     DeviceTile(
