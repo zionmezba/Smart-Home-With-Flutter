@@ -1,16 +1,10 @@
-# smart_home
+## Smart Home (IoT)
 
-A new Flutter project.
+# Home Screen
+![Screenshot_1719308718](https://github.com/zionmezba/Smart-Home-With-Flutter/assets/65642391/221637b2-b253-4dde-b39e-0a9c8b129987)
 
-## Getting Started
+# Individual Device Management
+![Screenshot_1719309013](https://github.com/zionmezba/Smart-Home-With-Flutter/assets/65642391/bdc50003-232c-4d17-8583-8d01a74b8a3a)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Each Rooms
+![Screenshot_1719309031](https://github.com/zionmezba/Smart-Home-With-Flutter/assets/65642391/e612fa69-fd36-4800-9d96-143a16b09f10)
