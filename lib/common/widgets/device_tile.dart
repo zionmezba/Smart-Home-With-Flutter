@@ -10,18 +10,27 @@ class DeviceTile extends StatelessWidget {
     this.isActive = false,
     required this.name,
     required this.brand,
+    required this.tabName,
   });
 
   final IconData icon;
   final bool isActive;
   final String name;
   final String brand;
+  final String tabName;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const SmartRoom())),
+        context,
+        MaterialPageRoute(
+          builder: (context) => SmartRoom(
+            isActive: isActive,
+            roomName: tabName,
+          ),
+        ),
+      ),
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Container(

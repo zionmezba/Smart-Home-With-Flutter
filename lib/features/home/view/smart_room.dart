@@ -6,8 +6,10 @@ import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:smart_home/features/home/widgets/slider_widget.dart';
 
 class SmartRoom extends StatelessWidget {
-  const SmartRoom({super.key, this.isActive = true});
+  const SmartRoom({super.key, this.isActive = true, required this.roomName});
   final bool isActive;
+  final String roomName;
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -23,9 +25,9 @@ class SmartRoom extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          title: const Text(
-            "Living Room",
-            style: TextStyle(
+          title: Text(
+            roomName,
+            style: const TextStyle(
                 color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
           ),
           centerTitle: true,

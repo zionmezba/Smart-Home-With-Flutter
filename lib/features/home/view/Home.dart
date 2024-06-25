@@ -27,24 +27,28 @@ class _HomePageState extends State<HomePage> {
 
   final List<Widget> room1 = [
     const DeviceTile(
+      tabName: "Living Room",
       brand: "Philips Hue",
       icon: FluentIcons.lightbulb_16_regular,
       name: "Light",
       isActive: true,
     ),
     const DeviceTile(
+      tabName: "Living Room",
       brand: "LG S3",
       icon: FluentIcons.weather_snowflake_20_regular,
       name: "AC",
       isActive: false,
     ),
     const DeviceTile(
+      tabName: "Living Room",
       brand: "Smart TV",
       icon: FluentIcons.tv_16_filled,
       name: "LG AI",
       isActive: false,
     ),
     const DeviceTile(
+      tabName: "Living Room",
       brand: "D-Link 422",
       icon: FluentIcons.router_20_filled,
       name: "Router",
@@ -53,24 +57,28 @@ class _HomePageState extends State<HomePage> {
   ];
   final List<Widget> room2 = [
     const DeviceTile(
+      tabName: "Kitchen",
       brand: "Philips Hue",
       icon: FluentIcons.lightbulb_16_regular,
       name: "Light",
       isActive: false,
     ),
     const DeviceTile(
+      tabName: "Kitchen",
       brand: "LG S3",
       icon: FluentIcons.weather_snowflake_20_regular,
       name: "AC",
       isActive: false,
     ),
     const DeviceTile(
+      tabName: "Kitchen",
       brand: "Washing Machine",
       icon: FluentIcons.tv_16_filled,
       name: "WM1455HVA",
       isActive: false,
     ),
     const DeviceTile(
+      tabName: "Kitchen",
       brand: "Lg-LRTLS2403S",
       icon: FluentIcons.router_20_filled,
       name: "Refrigerator",
@@ -80,18 +88,21 @@ class _HomePageState extends State<HomePage> {
 
   final List<Widget> room3 = [
     const DeviceTile(
+      tabName: "Bathroom",
       brand: "Philips Hue",
       icon: FluentIcons.lightbulb_16_regular,
       name: "Light",
       isActive: true,
     ),
     const DeviceTile(
+      tabName: "Bathroom",
       brand: "Geyser",
       icon: FluentIcons.weather_snowflake_20_regular,
       name: "Walton",
       isActive: true,
     ),
     const DeviceTile(
+      tabName: "Bathroom",
       brand: "Washing Machine",
       icon: FluentIcons.tv_16_filled,
       name: "WM1455HVA",
@@ -101,12 +112,21 @@ class _HomePageState extends State<HomePage> {
 
   final List<Widget> room4 = [
     const DeviceTile(
+      tabName: "Kid Room",
       brand: "Philips Hue",
       icon: FluentIcons.lightbulb_16_regular,
       name: "Light",
       isActive: true,
     ),
     const DeviceTile(
+      tabName: "Kid Room",
+      brand: "LG G3",
+      icon: FluentIcons.weather_snowflake_20_regular,
+      name: "AC",
+      isActive: true,
+    ),
+    const DeviceTile(
+      tabName: "Kid Room",
       brand: "Samsung",
       icon: FluentIcons.weather_snowflake_20_regular,
       name: "CC Camera",
