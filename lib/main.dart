@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                       crossAxisCount: 2,
                       childAspectRatio: 1.0,
                     ),
-                    itemCount: deviceTiles.length, // Example item count
+                    itemCount: deviceTiles.length, 
                     itemBuilder: (BuildContext context, int index) =>
                         deviceTiles[index],
                   ),
