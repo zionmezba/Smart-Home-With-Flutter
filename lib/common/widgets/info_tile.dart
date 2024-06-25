@@ -5,7 +5,16 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 class InfoTile extends StatelessWidget {
   const InfoTile({
     super.key,
+    required this.temp,
+    required this.humidity,
+    required this.powerUsage,
+    required this.lightIntensity,
   });
+
+  final int temp;
+  final int humidity;
+  final int powerUsage;
+  final int lightIntensity;
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +26,8 @@ class InfoTile extends StatelessWidget {
             gradient: ZColors.infoTileGrad,
             borderRadius: BorderRadius.circular(20),
           ),
-          child: const Padding(
-            padding: EdgeInsets.all(12.0),
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
             child: Column(
               children: [
                 Row(
@@ -26,7 +35,7 @@ class InfoTile extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           FluentIcons.temperature_24_regular,
                           color: Colors.white,
                           size: 40,
@@ -35,13 +44,13 @@ class InfoTile extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "26 C",
-                              style: TextStyle(
+                              "$temp C",
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 22,
                                   fontFamily: 'Roboto'),
                             ),
-                            Text(
+                            const Text(
                               "Temperature",
                               style: TextStyle(
                                   color: Colors.white,
@@ -51,8 +60,8 @@ class InfoTile extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(width: 60),
-                        Icon(
+                        const SizedBox(width: 60),
+                        const Icon(
                           FluentIcons.drop_20_filled,
                           size: 40,
                           color: Colors.white,
@@ -61,13 +70,13 @@ class InfoTile extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "35%",
-                              style: TextStyle(
+                              "$humidity%",
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 22,
                                   fontFamily: 'Roboto'),
                             ),
-                            Text(
+                            const Text(
                               "Humidity",
                               style: TextStyle(
                                   color: Colors.white,
@@ -81,13 +90,13 @@ class InfoTile extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 35),
+                const SizedBox(height: 35),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           FluentIcons.pulse_20_regular,
                           color: Colors.white,
                           size: 40,
@@ -96,13 +105,13 @@ class InfoTile extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "256 k",
-                              style: TextStyle(
+                              "$powerUsage k",
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 22,
                                   fontFamily: 'Roboto'),
                             ),
-                            Text(
+                            const Text(
                               "Energy Usage",
                               style: TextStyle(
                                   color: Colors.white,
@@ -112,8 +121,8 @@ class InfoTile extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(width: 50),
-                        Icon(
+                        const SizedBox(width: 50),
+                        const Icon(
                           FluentIcons.brightness_low_20_regular,
                           size: 40,
                           color: Colors.white,
@@ -122,13 +131,13 @@ class InfoTile extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "55%",
-                              style: TextStyle(
+                              "$lightIntensity%",
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 22,
                                   fontFamily: 'Roboto'),
                             ),
-                            Text(
+                            const Text(
                               "Light Intensity",
                               style: TextStyle(
                                   color: Colors.white,

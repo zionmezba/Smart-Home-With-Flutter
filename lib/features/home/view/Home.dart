@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
     const Stats()
   ];
 
-  final List<Widget> deviceTiles = [
+  final List<Widget> room1 = [
     const DeviceTile(
       brand: "Philips Hue",
       icon: FluentIcons.lightbulb_16_regular,
@@ -51,6 +51,68 @@ class _HomePageState extends State<HomePage> {
       isActive: true,
     ),
   ];
+  final List<Widget> room2 = [
+    const DeviceTile(
+      brand: "Philips Hue",
+      icon: FluentIcons.lightbulb_16_regular,
+      name: "Light",
+      isActive: false,
+    ),
+    const DeviceTile(
+      brand: "LG S3",
+      icon: FluentIcons.weather_snowflake_20_regular,
+      name: "AC",
+      isActive: false,
+    ),
+    const DeviceTile(
+      brand: "Washing Machine",
+      icon: FluentIcons.tv_16_filled,
+      name: "WM1455HVA",
+      isActive: false,
+    ),
+    const DeviceTile(
+      brand: "Lg-LRTLS2403S",
+      icon: FluentIcons.router_20_filled,
+      name: "Refrigerator",
+      isActive: true,
+    ),
+  ];
+
+  final List<Widget> room3 = [
+    const DeviceTile(
+      brand: "Philips Hue",
+      icon: FluentIcons.lightbulb_16_regular,
+      name: "Light",
+      isActive: true,
+    ),
+    const DeviceTile(
+      brand: "Geyser",
+      icon: FluentIcons.weather_snowflake_20_regular,
+      name: "Walton",
+      isActive: true,
+    ),
+    const DeviceTile(
+      brand: "Washing Machine",
+      icon: FluentIcons.tv_16_filled,
+      name: "WM1455HVA",
+      isActive: true,
+    ),
+  ];
+
+  final List<Widget> room4 = [
+    const DeviceTile(
+      brand: "Philips Hue",
+      icon: FluentIcons.lightbulb_16_regular,
+      name: "Light",
+      isActive: true,
+    ),
+    const DeviceTile(
+      brand: "Samsung",
+      icon: FluentIcons.weather_snowflake_20_regular,
+      name: "CC Camera",
+      isActive: false,
+    ),
+  ];
 
   void onTapped(int index) {
     setState(() {
@@ -63,44 +125,6 @@ class _HomePageState extends State<HomePage> {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
-        body: TabBarView(
-          children: [
-            SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  const SizedBox(height: 20),
-                  const InfoTile(),
-                  const SizedBox(height: 30),
-                  GridView.builder(
-                    shrinkWrap: true,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      childAspectRatio: 1.0,
-                    ),
-                    itemCount: deviceTiles.length,
-                    itemBuilder: (BuildContext context, int index) =>
-                        deviceTiles[index],
-                  ),
-                ],
-              ),
-            ),
-            const Center(
-              child: Text("Calls"),
-            ),
-            const Center(
-              child: Text("Settings"),
-            ),
-            const Center(
-              child: Text("Settings"),
-            ),
-            const Center(
-              child: Text("Settings"),
-            ),
-          ],
-        ),
-        backgroundColor: ZColors.primary,
         appBar: AppBar(
           elevation: 0,
           toolbarHeight: 70,
@@ -168,6 +192,136 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
+        body: TabBarView(
+          children: [
+            SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const SizedBox(height: 20),
+                  const InfoTile(
+                      temp: 24,
+                      humidity: 55,
+                      powerUsage: 231,
+                      lightIntensity: 51),
+                  const SizedBox(height: 30),
+                  GridView.builder(
+                    shrinkWrap: true,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 1.0,
+                    ),
+                    itemCount: room1.length,
+                    itemBuilder: (BuildContext context, int index) =>
+                        room1[index],
+                  ),
+                ],
+              ),
+            ),
+            SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const SizedBox(height: 20),
+                  const InfoTile(
+                      temp: 28,
+                      humidity: 60,
+                      powerUsage: 300,
+                      lightIntensity: 75),
+                  const SizedBox(height: 30),
+                  GridView.builder(
+                    shrinkWrap: true,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 1.0,
+                    ),
+                    itemCount: room2.length,
+                    itemBuilder: (BuildContext context, int index) =>
+                        room2[index],
+                  ),
+                ],
+              ),
+            ),
+            SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const SizedBox(height: 20),
+                  const InfoTile(
+                      temp: 23,
+                      humidity: 70,
+                      powerUsage: 101,
+                      lightIntensity: 45),
+                  const SizedBox(height: 30),
+                  GridView.builder(
+                    shrinkWrap: true,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 1.0,
+                    ),
+                    itemCount: room3.length,
+                    itemBuilder: (BuildContext context, int index) =>
+                        room3[index],
+                  ),
+                ],
+              ),
+            ),
+            SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const SizedBox(height: 20),
+                  const InfoTile(
+                      temp: 24,
+                      humidity: 55,
+                      powerUsage: 256,
+                      lightIntensity: 65),
+                  const SizedBox(height: 30),
+                  GridView.builder(
+                    shrinkWrap: true,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 1.0,
+                    ),
+                    itemCount: room4.length,
+                    itemBuilder: (BuildContext context, int index) =>
+                        room4[index],
+                  ),
+                ],
+              ),
+            ),
+            SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const SizedBox(height: 20),
+                  const InfoTile(
+                      temp: 27,
+                      humidity: 50,
+                      powerUsage: 350,
+                      lightIntensity: 80),
+                  const SizedBox(height: 30),
+                  GridView.builder(
+                    shrinkWrap: true,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 1.0,
+                    ),
+                    itemCount: room1.length,
+                    itemBuilder: (BuildContext context, int index) =>
+                        room1[index],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        backgroundColor: ZColors.primary,
         bottomNavigationBar: BottomNavBar(
           currentIndex: currentIndex,
           onTapped: onTapped,
