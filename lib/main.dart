@@ -47,6 +47,33 @@ class _HomePageState extends State<HomePage> {
     const Stats()
   ];
 
+  final List<Widget> deviceTiles = [
+    const DeviceTile(
+      brand: "Philips Hue",
+      icon: FluentIcons.lightbulb_16_regular,
+      name: "Light",
+      isActive: true,
+    ),
+    const DeviceTile(
+      brand: "LG S3",
+      icon: FluentIcons.weather_snowflake_20_regular,
+      name: "AC",
+      isActive: false,
+    ),
+    const DeviceTile(
+      brand: "Smart TV",
+      icon: FluentIcons.tv_16_filled,
+      name: "LG AI",
+      isActive: false,
+    ),
+    const DeviceTile(
+      brand: "D-Link 422",
+      icon: FluentIcons.router_20_filled,
+      name: "Router",
+      isActive: true,
+    ),
+  ];
+
   void onTapped(int index) {
     setState(() {
       currentIndex = index;
@@ -60,55 +87,26 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         body: TabBarView(
           children: [
-            Column(
-              children: [
-                const SizedBox(height: 20),
-                const InfoTile(),
-                const SizedBox(height: 30),
-                Expanded(
-                  flex: 1,
-                  child: GridView(
+            SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const SizedBox(height: 20),
+                  const InfoTile(),
+                  const SizedBox(height: 30),
+                  GridView.builder(
+                    shrinkWrap: true,
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      crossAxisSpacing: 10.0,
-                      mainAxisSpacing: 10.0,
+                      childAspectRatio: 1.0,
                     ),
-                    children: const [
-                      DeviceTile(
-                        brand: "Philips Hue",
-                        icon: FluentIcons.lightbulb_20_regular,
-                        name: "Light",
-                        isActive: true,
-                      ),
-                      DeviceTile(
-                        brand: "LG S3",
-                        icon: FluentIcons.weather_snowflake_20_regular,
-                        name: "AC",
-                        isActive: false,
-                      ),
-                      DeviceTile(
-                        brand: "LG S3",
-                        icon: FluentIcons.weather_snowflake_20_regular,
-                        name: "AC",
-                        isActive: false,
-                      ),
-                      DeviceTile(
-                        brand: "LG S3",
-                        icon: FluentIcons.weather_snowflake_20_regular,
-                        name: "AC",
-                        isActive: false,
-                      ),
-                      DeviceTile(
-                        brand: "LG S3",
-                        icon: FluentIcons.weather_snowflake_20_regular,
-                        name: "AC",
-                        isActive: false,
-                      ),
-                    ],
+                    itemCount: deviceTiles.length, // Example item count
+                    itemBuilder: (BuildContext context, int index) =>
+                        deviceTiles[index],
                   ),
-                )
-              ],
+                ],
+              ),
             ),
             const Center(
               child: Text("Calls"),
