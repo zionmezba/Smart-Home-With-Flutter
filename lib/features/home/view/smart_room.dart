@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
 import 'package:dynamic_tabbar/dynamic_tabbar.dart';
 import 'package:smart_home/utils/theme/colors.dart';
-import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:smart_home/features/home/widgets/slider_widget.dart';
 
 class SmartRoom extends StatelessWidget {
-  const SmartRoom({Key? key, this.isActive = true}) : super(key: key);
+  const SmartRoom({super.key, this.isActive = true});
   final bool isActive;
   @override
   Widget build(BuildContext context) {
